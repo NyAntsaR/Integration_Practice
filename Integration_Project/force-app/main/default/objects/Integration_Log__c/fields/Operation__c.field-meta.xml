@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Operation__c</fullName>
+    <description>Type of Salesforce-to-GitHub or GitHub-to-Salesforce operation.</description>
+    <externalId>false</externalId>
+    <label>Operation</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Create Issue</fullName>
+                <default>false</default>
+                <label>Create Issue</label>
+            </value>
+            <value>
+                <fullName>Get Issue</fullName>
+                <default>false</default>
+                <label>Get Issue</label>
+            </value>
+            <value>
+                <fullName>Update Issue</fullName>
+                <default>false</default>
+                <label>Update Issue</label>
+            </value>
+            <value>
+                <fullName>Webhook</fullName>
+                <default>false</default>
+                <label>Webhook</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
