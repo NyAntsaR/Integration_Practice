@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>QuoteService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <description>Grants access to the API Ninjas Named Credential principal used by QuoteService.</description>
+    <externalCredentialPrincipalAccesses>
+        <enabled>true</enabled>
+        <externalCredentialPrincipal>ApiNinjas-ApiNinjasPrincipal</externalCredentialPrincipal>
+    </externalCredentialPrincipalAccesses>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>API Ninjas Access</label>
+</PermissionSet>
