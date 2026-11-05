@@ -1,25 +1,12 @@
+Case c = [
+    SELECT Id, CaseNumber
+    FROM Case
+    WHERE Subject = 'Test GitHub Integration — End-to-End'
+    ORDER BY CreatedDate DESC
+    LIMIT 1
+];
 
-GitHubApiService.CreateIssueRequest request =
-    new GitHubApiService.CreateIssueRequest();
+Id jobId = CaseEscalationService.escalateToEngineering(c.Id);
 
-request.title =
-    '[Salesforce Integration Test] Subscription activation failure';
-
-request.body =
-    'Synthetic test issue created from Salesforce Apex.\n\n' +
-    'Scenario: Payment succeeded, but the subscription ' +
-    'remains Pending Activation.\n\n' +
-    'Expected: Subscription becomes Active.\n' +
-    'Actual: Subscription remains Pending Activation.';
-
-GitHubApiService.IssueResponse response =
-    GitHubApiService.createIssue(
-        'NyAntsaR',
-        'salesforce-engineering-escalations',
-        request
-    );
-
-System.debug('Issue Number: ' + response.issueNumber);
-System.debug('Issue ID: ' + response.id);
-System.debug('Issue URL: ' + response.htmlUrl);
-System.debug('Issue State: ' + response.state);
+System.debug('Case: ' + c.CaseNumber);
+System.debug('Queueable Job ID: ' + jobId);
