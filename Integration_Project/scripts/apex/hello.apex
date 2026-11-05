@@ -1,25 +1,25 @@
 
-try {
-    String response =
-        GitHubApiService.getAuthenticatedUser();
+GitHubApiService.CreateIssueRequest request =
+    new GitHubApiService.CreateIssueRequest();
 
-    Map<String, Object> githubUser =
-        (Map<String, Object>) JSON.deserializeUntyped(
-            response
-        );
+request.title =
+    '[Salesforce Integration Test] Subscription activation failure';
 
-    System.debug(
-        'SUCCESS - GitHub Username: ' +
-        githubUser.get('login')
+request.body =
+    'Synthetic test issue created from Salesforce Apex.\n\n' +
+    'Scenario: Payment succeeded, but the subscription ' +
+    'remains Pending Activation.\n\n' +
+    'Expected: Subscription becomes Active.\n' +
+    'Actual: Subscription remains Pending Activation.';
+
+GitHubApiService.IssueResponse response =
+    GitHubApiService.createIssue(
+        'NyAntsaR',
+        'salesforce-engineering-escalations',
+        request
     );
 
-    System.debug(
-        'GitHub User ID: ' +
-        githubUser.get('id')
-    );
-
-} catch (Exception e) {
-    System.debug(
-        'ERROR: ' + e.getMessage()
-    );
-}
+System.debug('Issue Number: ' + response.issueNumber);
+System.debug('Issue ID: ' + response.id);
+System.debug('Issue URL: ' + response.htmlUrl);
+System.debug('Issue State: ' + response.state);
