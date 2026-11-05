@@ -23,6 +23,7 @@
     </profileActionOverrides>
     <tabs>standard-Case</tabs>
     <tabs>Integration_Log__c</tabs>
+    <tabs>Integration_Operation__c</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
     <uiType>Lightning</uiType>
@@ -32,6 +33,9 @@
         </mappings>
         <mappings>
             <tab>Integration_Log__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Integration_Operation__c</tab>
         </mappings>
         <mappings>
             <tab>standard-report</tab>

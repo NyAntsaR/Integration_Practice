@@ -1,12 +1,19 @@
+
 Case c = [
     SELECT Id, CaseNumber
     FROM Case
-    WHERE Subject = 'Test GitHub Integration — End-to-End'
+    WHERE Subject = 'GitHub Integration - Operation Tracking Test'
     ORDER BY CreatedDate DESC
     LIMIT 1
 ];
 
-Id jobId = CaseEscalationService.escalateToEngineering(c.Id);
+try {
+    Id jobId = CaseEscalationService.escalateToEngineering(c.Id);
 
-System.debug('Case: ' + c.CaseNumber);
-System.debug('Queueable Job ID: ' + jobId);
+    System.debug('UNEXPECTED: Job created: ' + jobId);
+
+} catch (CaseEscalationService.CaseEscalationException e) {
+
+    System.debug('EXPECTED: Duplicate escalation blocked.');
+    System.debug('Reason: ' + e.getMessage());
+}

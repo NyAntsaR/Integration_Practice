@@ -139,4 +139,12 @@
         <object>Integration_Operation__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
+    <tabSettings>
+        <tab>Integration_Log__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Integration_Operation__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
 </PermissionSet>
