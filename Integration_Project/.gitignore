@@ -49,4 +49,3 @@ $RECYCLE.BIN/
 
 # Locally installed agent skills
 .agents/
-.claude/skills/
